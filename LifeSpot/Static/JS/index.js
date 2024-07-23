@@ -2,8 +2,13 @@
 * Сессия теперь создается в общей области видимости.
 * Будет "захватываться" тремя функциями
 * 
-* */ 
-let session =  new Map();
+* */
+//let session =  new Map();
+let session = {
+    'startDate': new Date().toLocaleString(),
+    'userAgent': window.navigator.userAgent,
+    'userAge': prompt("пПожалуйста, введите Ваш возраст?")
+}
 
 /*
 * Сохранение данных сессии сразу при заходе пользователя на страницу
@@ -21,12 +26,19 @@ function handleSession(){
 * 
 * */
 function checkAge(){
-    session.set("age", prompt("Пожалуйста, введите ваш возраст?"))
-    
-    if(session.get("age") >= 18){
-        alert("Приветствуем на LifeSpot! " + '\n' +  "Текущее время: " + new Date().toLocaleString() );
+    //session.set("age", prompt("Пожалуйста, введите ваш возраст?"))
+
+    //if(session.get("age") >= 18){
+    //    alert("Приветствуем на LifeSpot! " + '\n' +  "Текущее время: " + new Date().toLocaleString() );
+    //}
+    //else{
+    //    alert("Наши трансляции не предназначены для лиц моложе 18 лет. ВыL будете перенаправлены");
+    //    window.location.href = "http://www.google.com"
+    //}
+    if (session.userAge >= 18) {
+        alert("Приветствуем на LifeSpot! " + '\n' + "Текущее время: " + new Date().toLocaleString());
     }
-    else{
+    else {
         alert("Наши трансляции не предназначены для лиц моложе 18 лет. ВыL будете перенаправлены");
         window.location.href = "http://www.google.com"
     }
@@ -38,9 +50,12 @@ function checkAge(){
 * 
 * */
 let sessionLog = function () {
-    for (let result of session){
-        console.log(result)
-    }
+    //for (let result of session){
+    //    console.log(result)
+    //}
+    console.log('Начало сессии: ' + session.startDate)
+    console.log('Данные клиента: ' + session.userAgent)
+    console.log('Возраст пользователя: ' + session.userAge)
 }
 
 /*
