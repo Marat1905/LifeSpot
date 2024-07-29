@@ -20,4 +20,20 @@
       </EmbeddedResource>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Image\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Image\london.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Image\ny.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Image\spb.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
