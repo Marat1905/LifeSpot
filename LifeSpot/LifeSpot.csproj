@@ -21,17 +21,17 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Image\" />
+      <Folder Include="Images\" />
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="Image\london.jpg">
+      <None Update="Images\london.jpg">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="Image\ny.jpg">
+      <None Update="Images\ny.jpg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="Image\spb.jpg">
+      <None Update="Images\spb.jpg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>

@@ -92,5 +92,22 @@ namespace LifeSpot.Extensions
                 await context.Response.WriteAsync(html.ToString());
             });
         }
+
+        /// <summary>
+        ///  Маппинг картинок
+        /// </summary>
+        public static void MapImage(this IEndpointRouteBuilder builder)
+        {
+            var imageFiles = new[] { "london.jpg", "ny.jpg", "spb.jpg" };
+
+            foreach (var fileName in imageFiles)
+            {
+                builder.MapGet($"/Images/{fileName}", async context =>
+                {
+                    var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "Images", fileName);
+                    await context.Response.SendFileAsync(imagePath);
+                });
+            }
+        }
     }
 }
